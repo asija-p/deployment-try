@@ -18,12 +18,12 @@ p {
 
 .keyboard-container {
     background-color: rgba(167, 167, 167, 0.815);
-    width: auto;
-    height:300px;
-    padding: 20px 20px 0 20px;
+    width: 613px;
+    height: auto;
+    padding: 20px 20px 20px 20px;
     position: absolute;
     bottom: 0%;
-    
+
 }
 
 .keyboard-row {
@@ -51,14 +51,14 @@ p {
     row-gap: 5px;
     column-gap: 5px;
     margin-bottom: 10px;
-
-
+    height: 50vh;
+    
 }
 
 
 .box {
     background-color: rgb(255, 255, 255);
     border: 0.5px solid gray;
-    width: min(30px, 13vh);
-    height: min(30px, 13vh); 
+    width: min(62px, calc((100vh - 400px) / 5));
+    height: min(62px, calc((100vh - 400px) / 5));
 }
