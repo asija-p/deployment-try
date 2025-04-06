@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Wordle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="script.js"></script>
+    <title>📚 Wordle 📚</title>
 </head>
 
 <body>
     <main class="container">
         <h1>Wordle</h1>
-    <div class="grid-container">
+        <div class="grid-container">
         <div class = "box"></div>
         <div class = "box"></div>
         <div class = "box"></div>
@@ -38,9 +42,45 @@
         <div class = "box"></div>
         <div class = "box"></div>
     </div>
-    <div class="keyboard-container">
-        <p>aaa</p>
-    </div>
+        <div class="grid-container">
+            
+        </div>
+        <div class="keyboard-container">
+            <div class="keyboard-row">
+                <span class="key" onclick="AddLetter()" >Q</span>
+                <span class="key" onclick="AddLetter()" >W</span>
+                <span class="key" onclick="AddLetter()" >E</span>
+                <span class="key" onclick="AddLetter()" >R</span>
+                <span class="key" onclick="AddLetter()" >T</span>
+                <span class="key" onclick="AddLetter()" >Y</span>
+                <span class="key" onclick="AddLetter()" >U</span>
+                <span class="key" onclick="AddLetter()" >I</span>
+                <span class="key" onclick="AddLetter()" >O</span>
+                <span class="key" onclick="AddLetter()" >P</span>
+            </div>
+            <div class="keyboard-row">
+                <span class="key" onclick="AddLetter()">A</span>
+                <span class="key" onclick="AddLetter()">S</span>
+                <span class="key" onclick="AddLetter()">D</span>
+                <span class="key" onclick="AddLetter()">F</span>
+                <span class="key" onclick="AddLetter()">G</span>
+                <span class="key" onclick="AddLetter()">H</span>
+                <span class="key" onclick="AddLetter()">J</span>
+                <span class="key" onclick="AddLetter()">K</span>
+                <span class="key" onclick="AddLetter()">L</span>
+            </div>
+            <div class="keyboard-row">
+                <span class="key"onclick="SelectWord()">ENTER</span>
+                <span class="key" onclick="AddLetter()">Z</span>
+                <span class="key" onclick="AddLetter()">X</span>
+                <span class="key" onclick="AddLetter()">C</span>
+                <span class="key" onclick="AddLetter()">V</span>
+                <span class="key" onclick="AddLetter()">B</span>
+                <span class="key" onclick="AddLetter()">N</span>
+                <span class="key" onclick="AddLetter()">M</span>
+                <span class="key" onclick="DeleteLetter()"><i class="fa-solid fa-delete-left"></i></span>
+            </div>
+        </div>
     </main>
 </body>
 
