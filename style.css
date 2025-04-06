@@ -14,12 +14,25 @@ body,p{
 }
 
 .grid-container{
-    background-color: red;
-    width: 50vw;
-    height: 40vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    grid-template-rows: repeat(5, 1fr);   
+    row-gap: 5px;
+    column-gap: 5px;
+    margin-bottom: 10px;
+
+
 }
+
 .keyboard-container{
     background-color: blue;
     width: 50vw;
     height: 40vh;
+}
+
+.box {
+    background-color: rgb(255, 255, 255);
+    border: 0.5px solid gray;
+    width: min(30px, 13vh);
+    height: min(30px, 13vh); 
 }
