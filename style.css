@@ -21,7 +21,7 @@ p {
     width: 613px;
     height: auto;
     padding: 20px 20px 20px 20px;
-    position: absolute;
+    position: fixed;
     bottom: 0%;
 
 }
@@ -42,6 +42,11 @@ p {
     padding: 10px;
     margin-bottom: 5px;
     background-color: grey;
+    
+}
+
+.key:active {
+    background-color: rgb(64, 64, 64); 
 }
 
 .grid-container{
@@ -59,6 +64,8 @@ p {
 .box {
     background-color: rgb(255, 255, 255);
     border: 0.5px solid gray;
-    width: min(62px, calc((100vh - 400px) / 5));
-    height: min(62px, calc((100vh - 400px) / 5));
+    width: min(62px, 13vh);
+    height: min(62px, 13vh);
+    text-align: center;
+    line-height: 65px;
 }

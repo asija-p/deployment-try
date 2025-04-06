@@ -16,74 +16,84 @@
     <main class="container">
         <h1>Wordle</h1>
         <div class="grid-container">
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
-            <div class = "box"></div>
+            <div class = "box" id="r0c0"></div>
+            <div class = "box" id="r0c1"></div>
+            <div class = "box" id="r0c2"></div>
+            <div class = "box" id="r0c3"></div>
+            <div class = "box" id="r0c4"></div>
+
+            <div class = "box" id="r1c0"></div>
+            <div class = "box" id="r1c1"></div>
+            <div class = "box" id="r1c2"></div>
+            <div class = "box" id="r1c3"></div>
+            <div class = "box" id="r1c4"></div>
+            
+            <div class = "box" id="r2c0"></div>
+            <div class = "box" id="r2c1"></div>
+            <div class = "box" id="r2c2"></div>
+            <div class = "box" id="r2c3"></div>
+            <div class = "box" id="r2c4"></div>
+            
+            <div class = "box" id="r3c0"></div>
+            <div class = "box" id="r3c1"></div>
+            <div class = "box" id="r3c2"></div>
+            <div class = "box" id="r3c3"></div>
+            <div class = "box" id="r3c4"></div>
+            
+            <div class = "box" id="r4c0"></div>
+            <div class = "box" id="r4c1"></div>
+            <div class = "box" id="r4c2"></div>
+            <div class = "box" id="r4c3"></div>
+            <div class = "box" id="r4c4"></div>
+            
+            <div class = "box" id="r5c0"></div>
+            <div class = "box" id="r5c1"></div>
+            <div class = "box" id="r5c2"></div>
+            <div class = "box" id="r5c3"></div>
+            <div class = "box" id="r5c4"></div>
         </div>
         <div class="keyboard-container">
             <div class="keyboard-row">
-                <span class="key" onclick="AddLetter()" >Q</span>
-                <span class="key" onclick="AddLetter()" >W</span>
-                <span class="key" onclick="AddLetter()" >E</span>
-                <span class="key" onclick="AddLetter()" >R</span>
-                <span class="key" onclick="AddLetter()" >T</span>
-                <span class="key" onclick="AddLetter()" >Y</span>
-                <span class="key" onclick="AddLetter()" >U</span>
-                <span class="key" onclick="AddLetter()" >I</span>
-                <span class="key" onclick="AddLetter()" >O</span>
-                <span class="key" onclick="AddLetter()" >P</span>
+                <button class="key" id="Q" onclick="AddLetter(this.id)">Q</button>
+                <button class="key" id="W" onclick="AddLetter(this.id)">W</button>
+                <button class="key" id="E" onclick="AddLetter(this.id)">E</button>
+                <button class="key" id="R" onclick="AddLetter(this.id)">R</button>
+                <button class="key" id="T" onclick="AddLetter(this.id)">T</button>
+                <button class="key" id="Y" onclick="AddLetter(this.id)">Y</button>
+                <button class="key" id="U" onclick="AddLetter(this.id)">U</button>
+                <button class="key" id="I" onclick="AddLetter(this.id)">I</button>
+                <button class="key" id="O" onclick="AddLetter(this.id)">O</button>
+                <button class="key" id="P" onclick="AddLetter(this.id)">P</button>
             </div>
+            
             <div class="keyboard-row">
-                <span class="key" onclick="AddLetter()">A</span>
-                <span class="key" onclick="AddLetter()">S</span>
-                <span class="key" onclick="AddLetter()">D</span>
-                <span class="key" onclick="AddLetter()">F</span>
-                <span class="key" onclick="AddLetter()">G</span>
-                <span class="key" onclick="AddLetter()">H</span>
-                <span class="key" onclick="AddLetter()">J</span>
-                <span class="key" onclick="AddLetter()">K</span>
-                <span class="key" onclick="AddLetter()">L</span>
+                <button class="key" id="A" onclick="AddLetter(this.id)">A</button>
+                <button class="key" id="S" onclick="AddLetter(this.id)">S</button>
+                <button class="key" id="D" onclick="AddLetter(this.id)">D</button>
+                <button class="key" id="F" onclick="AddLetter(this.id)">F</button>
+                <button class="key" id="G" onclick="AddLetter(this.id)">G</button>
+                <button class="key" id="H" onclick="AddLetter(this.id)">H</button>
+                <button class="key" id="J" onclick="AddLetter(this.id)">J</button>
+                <button class="key" id="K" onclick="AddLetter(this.id)">K</button>
+                <button class="key" id="L" onclick="AddLetter(this.id)">L</button>
             </div>
+            
             <div class="keyboard-row">
-                <span class="key"onclick="SelectWord()">ENTER</span>
-                <span class="key" onclick="AddLetter()">Z</span>
-                <span class="key" onclick="AddLetter()">X</span>
-                <span class="key" onclick="AddLetter()">C</span>
-                <span class="key" onclick="AddLetter()">V</span>
-                <span class="key" onclick="AddLetter()">B</span>
-                <span class="key" onclick="AddLetter()">N</span>
-                <span class="key" onclick="AddLetter()">M</span>
-                <span class="key" onclick="DeleteLetter()"><i class="fa-solid fa-delete-left"></i></span>
+                <button class="key" id="ENTER" onclick="ButtonPress()">ENTER</button>
+                <button class="key" id="Z" onclick="AddLetter(this.id)">Z</button>
+                <button class="key" id="X" onclick="AddLetter(this.id)">X</button>
+                <button class="key" id="C" onclick="AddLetter(this.id)">C</button>
+                <button class="key" id="V" onclick="AddLetter(this.id)">V</button>
+                <button class="key" id="B" onclick="AddLetter(this.id)">B</button>
+                <button class="key" id="N" onclick="AddLetter(this.id)">N</button>
+                <button class="key" id="M" onclick="AddLetter(this.id)">M</button>
+                <button class="key" id="DELETE" onclick="DeleteLetter()">
+                    <i class="fa-solid fa-delete-left"></i>
+                </button>
             </div>
         </div>
     </main>
 </body>
+
 
 </html>
