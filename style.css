@@ -17,7 +17,7 @@ p {
 
 
 .keyboard-container {
-    background-color: rgba(167, 167, 167, 0.815);
+    background-color: rgba(255, 255, 255, 0.815);
     width: 613px;
     height: auto;
     padding: 20px 20px 20px 20px;
@@ -38,15 +38,15 @@ p {
 
     border-radius: 5px;
     display: inline-block;
-    border: 3px groove #999;
+    border: 3px groove #cacaca;
     padding: 10px;
     margin-bottom: 5px;
-    background-color: grey;
+    background-color: rgb(234, 234, 234);
     
 }
 
 .key:active {
-    background-color: rgb(64, 64, 64); 
+    background-color: rgb(159, 159, 159); 
 }
 
 .grid-container{
@@ -62,10 +62,21 @@ p {
 
 
 .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: rgb(255, 255, 255);
-    border: 0.5px solid gray;
-    width: min(62px, 13vh);
-    height: min(62px, 13vh);
+    border: 2px solid rgb(61, 61, 61);
+    width: min(70px, 13vh);
+    height: min(70px, 13vh);
     text-align: center;
-    line-height: 65px;
+
+    box-shadow: 1px 1px 0.5px rgb(44, 44, 44);;
+
+}
+
+.wrong-letter {
+    background-color: rgb(113, 113, 113);
+    border: 3px groove rgb(132, 132, 132);
 }
