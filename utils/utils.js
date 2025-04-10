@@ -1,11 +1,11 @@
+import { ResetGame } from "../core/uiHandler.js";
 import { GameState } from "../data/gameState.js";
 
 
 function ErrorHandler(errorInfo) {
 
-    const popupContainer = document.querySelector('.popup-container');
+    const popupContainer = document.getElementById('errorPopupContainer');
     const popup = document.getElementById("popup");
-    const closeButton = document.getElementById("closePopup");
     let errorMsg = document.querySelector("#errorText");
 
     popupContainer.classList.add("show");
@@ -17,21 +17,48 @@ function ErrorHandler(errorInfo) {
     GameState.popupTimeout = setInterval(() => {
         popupContainer.classList.remove("show");
     }, 1000);
+}
+
+function EndHandler(endInfo) {
+
+    const popupContainer = document.getElementById('endPopupContainer');
+    const popup = document.getElementById("popup");
+    const closeButton = document.getElementById("closeEndPopup");
+    let endMsg = document.querySelector("#endText");
+    let desc = document.getElementById("descText");
+    let ans = document.getElementById("answerText");
+    let resetButton = document.getElementById("playAgain");
+
+    popupContainer.classList.add("show");
+    endMsg.textContent = endInfo;
+    ans.textContent = `${GameState.answer}`;
+    desc.textContent = `Meaning: ${GameState.desc}`
+    console.log("end");
 
     closeButton.addEventListener("click", () => {
         popupContainer.classList.remove("show");
-        clearTimeout(GameState.popupTimeout);
+    });
+
+    resetButton.addEventListener("click", () => {
+        ResetGame();
+        popupContainer.classList.remove("show");
     });
 }
 
 function FreeColumn(param = 0) {
     let targetInput;
     for (let i = 0; i < 5; i++) {
+        
         targetInput = document.getElementById(`r${param}c${i}`);
-        targetInput.removeAttribute("disabled");
+
+
+        if (targetInput) {
+            targetInput.removeAttribute("disabled");
+        } else {
+            console.warn(`Input element r${param}c${i} not found`);
+        }
     }
 }
-
 function GenerateGrid() {
     let gridContainer = document.querySelector(".grid-container");
     const rows = 6;
@@ -52,4 +79,36 @@ function GenerateGrid() {
     }
 }
 
-export { ErrorHandler, FreeColumn,GenerateGrid };
+function ClearGrid()
+{
+    let gridContainer = document.querySelector(".grid-container");
+    const rows = 6;
+    const cols=5;
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+            const cellId = `r${r}c${c}`;
+            const cell = document.getElementById(cellId);
+
+            if (cell) {
+                const cellColor = cell.style.backgroundColor;
+                const cellValue = cell.value;
+
+                if (cellColor === "rgb(244, 62, 62)" && cellValue) {
+                    const keyBtn = document.getElementById(cellValue.toUpperCase());
+
+                    if (keyBtn) 
+                    {  
+                        keyBtn.style.backgroundColor = "rgb(234, 234, 234)";
+                        keyBtn.style.border = "3px groove #cacaca";
+                    }
+                 
+                }
+
+                cell.value = "";
+                cell.style.backgroundColor = "rgb(255, 255, 255)"; 
+            }
+        }
+    }
+}
+
+export { ErrorHandler, EndHandler, FreeColumn, GenerateGrid, ClearGrid };

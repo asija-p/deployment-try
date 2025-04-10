@@ -1,4 +1,7 @@
 import { GameState } from "../data/gameState.js";
+import { GetWord } from "../services/apiService.js";
+import { ClearGrid } from "../utils/utils.js";
+
 
 function handleInput(input_id, input_value) {
     let targetInput;
@@ -47,6 +50,8 @@ function DeleteLetter() {
         const inputId = `r${GameState.row}c${GameState.column - 1}`;
         const targetInput = document.querySelector(`#${inputId}`);
 
+        targetInput.style.backgroundColor = "rgb(255, 255, 255)";
+
         if (targetInput.value !== "") {
             targetInput.value = "" // Correct way to remove the <p> element
             GameState.column--;
@@ -63,4 +68,12 @@ function AddScreenLetter(letter) {
     targetInput.style.backgroundColor = "rgb(234, 234, 234)";
 }
 
-export { handleInput, AddScreenLetter, DeleteLetter, AddLetter };
+function ResetGame()
+{
+    ClearGrid();
+    GetWord();
+    GameState.row=0;
+    GameState.column=0;
+}
+
+export { handleInput, AddScreenLetter, DeleteLetter, AddLetter, ResetGame };

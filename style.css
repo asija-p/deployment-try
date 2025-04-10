@@ -45,6 +45,8 @@ input{
     padding: 10px;
     margin-bottom: 5px;
     background-color: rgb(234, 234, 234);
+
+    cursor: pointer;
     
 }
 
@@ -75,7 +77,9 @@ input{
     height: min(70px, 13vh);
     text-align: center;
 
-    box-shadow: 1px 1px 0.5px rgb(44, 44, 44);;
+    box-shadow: 1px 1px 0.5px rgb(44, 44, 44);
+
+    border-radius: 7px;
 
 }
 
@@ -131,5 +135,58 @@ input{
     font-size: 20px;
     cursor: pointer;
     color: rgb(100, 100, 100);
+    
   }
 
+    .line {
+        border-top: 1px solid #000; 
+        margin-top: 10px; 
+        margin-bottom: 10px;
+        padding-top: 20px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .description {
+        margin-top: 10px; 
+        font-size: 20px;
+        font-weight: normal;
+        font-weight: 600;
+    }
+
+    .answer {
+        font-size: 25px;
+        color: rgb(235, 68, 68);
+    }
+
+    .restart {
+
+        width:130px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: black;
+        color: white;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+
+        margin-top: 20px;
+        box-shadow: 5px 5px 3px rgb(92, 92, 92);
+
+        cursor: pointer;
+        border: none;
+
+        margin-bottom: 10px;
+
+        transition: all 0.01s ease-in-out;
+    }
+
+    .restart:hover {
+        background-color: rgb(71, 71, 71);
+        transform: scale(1.03); 
+        border-radius: 22px;
+
+
+
+        margin-bottom: 10px;
+    }

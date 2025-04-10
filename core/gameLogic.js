@@ -1,5 +1,5 @@
 import { GameState } from "../data/gameState.js";
-import { FreeColumn } from "../utils/utils.js";
+import { FreeColumn, EndHandler, ErrorHandler } from "../utils/utils.js";
 
 
 
@@ -49,10 +49,31 @@ async function ButtonPress() {
         }
     }
 
+    if (GameState.tryWord.join("") === GameState.answer) {
+        End();
+        EndHandler("You did it!");
+        return; 
+    }
+    else if (GameState.row==5)
+    {
+        End();
+        EndHandler("You failed!");
+        return; 
+    }
+
+    End();
+
+  
+}
+
+function End()
+{
     GameState.row++;
     GameState.column = 0;
     GameState.tryWord = [];
-    FreeColumn(GameState.row);
+    if (GameState.row < 6) {
+        FreeColumn(GameState.row); 
+    }
 }
 
 export {ButtonPress}
