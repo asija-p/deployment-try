@@ -1,7 +1,7 @@
-import { ButtonPress } from "../core/gameLogic.js";
-import { handleInput, AddScreenLetter, DeleteLetter, AddLetter, ResetGame } from "../core/uiHandler.js";
-import { GetWord, getMeaning, WordExists } from "../services/apiService.js";
-import { ErrorHandler, FreeColumn, GenerateGrid } from "../utils/utils.js";
+import { ButtonPress } from "./core/gameLogic.js";
+import { handleInput, AddScreenLetter, DeleteLetter, AddLetter, ResetGame } from "./core/uiHandler.js";
+import { GetWord, getMeaning, WordExists } from "./services/apiService.js";
+import { ErrorHandler, FreeColumn, GenerateGrid } from "./utils/utils.js";
 
 GetWord();
 GenerateGrid();
