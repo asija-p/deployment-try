@@ -35,7 +35,7 @@ async function GetWord() {
         GetWord();
         return;
     }
-    console.log(`word: ${GameState.answer}`);
+    console.log("%c"+GameState.answer, "color: yellow; font-size: 12px;");
     getMeaning();
 };
 
@@ -45,7 +45,7 @@ async function getMeaning() {
         .then(([descr]) => {
             GameState.desc = descr.meanings[0].definitions[0].definition;
         });
-    console.log(`meaning: ${GameState.desc}`);
+    console.log("%c"+GameState.desc, "color: yellow; font-size: 12px;");
 }
 
 export { WordExists, GetWord, getMeaning };

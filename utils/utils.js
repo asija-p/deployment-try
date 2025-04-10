@@ -47,15 +47,20 @@ function EndHandler(endInfo) {
 
 function FreeColumn(param = 0) {
     let targetInput;
+    let FocusFirst;
     for (let i = 0; i < 5; i++) {
-        
         targetInput = document.getElementById(`r${param}c${i}`);
-
-
+        FocusFirst = document.getElementById(`r${param}c${0}`);
         if (targetInput) {
             targetInput.removeAttribute("disabled");
         } else {
             console.warn(`Input element r${param}c${i} not found`);
+        }
+        if(i==0){
+            console.log("EVOOO MEEE FOCUS MEEE");
+            setTimeout(() => {
+                FocusFirst.focus();
+            }, 0);
         }
     }
 }
@@ -97,10 +102,9 @@ function ClearGrid()
                     const keyBtn = document.getElementById(cellValue.toUpperCase());
 
                     if (keyBtn) 
-                    {  
-                        keyBtn.style.backgroundColor = "rgb(234, 234, 234)";
-                        keyBtn.style.border = "3px groove #cacaca";
-                    }
+                        {
+                            keyBtn.classList.remove("wrong-letter");
+                        }
                  
                 }
 

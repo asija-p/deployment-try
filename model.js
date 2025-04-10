@@ -3,10 +3,6 @@ import { handleInput, AddScreenLetter, DeleteLetter, AddLetter, ResetGame } from
 import { GetWord, getMeaning, WordExists } from "./services/apiService.js";
 import { ErrorHandler, FreeColumn, GenerateGrid } from "./utils/utils.js";
 
-GetWord();
-GenerateGrid();
-FreeColumn();
-console.log("STARTED...");
 window.AddLetter = AddLetter;
 window.DeleteLetter = DeleteLetter;
 window.handleInput = handleInput;
@@ -17,3 +13,8 @@ window.AddScreenLetter = AddScreenLetter;
 window.ErrorHandler = ErrorHandler;
 window.FreeColumn = FreeColumn;
 window.ResetGame = ResetGame;
+
+GetWord();
+GenerateGrid();
+FreeColumn();
+console.log("STARTED...");

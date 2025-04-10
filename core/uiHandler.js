@@ -1,7 +1,33 @@
 import { GameState } from "../data/gameState.js";
 import { GetWord } from "../services/apiService.js";
 import { ClearGrid } from "../utils/utils.js";
+import { ButtonPress } from "./gameLogic.js";
 
+document.addEventListener("keydown", function (event) {
+
+    if (event.key == "Backspace") {
+        //console.log("Backspace Pressed");
+        try {
+            let InputBox = document.getElementById(`r${GameState.row}c${GameState.column - 1}`);
+            InputBox.style.backgroundColor = 'white';
+            GameState.tryWord.pop();
+            console.log(GameState.tryWord);
+            InputBox.focus();
+            GameState.column--;
+            return;
+        } catch {
+            console.error("Left grid area");
+        }
+    }
+})
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key == "Enter") {
+        console.log("ENTER PRESSED");
+        ButtonPress();
+    }
+})
 
 function handleInput(input_id, input_value) {
     let targetInput;
@@ -12,14 +38,14 @@ function handleInput(input_id, input_value) {
             GameState.tryWord.push(input_value.toUpperCase());
             GameState.column++;
         }
-        else{
-            GameState.tryWord.pop();
-            GameState.tryWord.push(input_value.toUpperCase());
+        else {
+            GameState.tryWord[input_id[3]]=input_value.toUpperCase();
+            console.log(GameState.tryWord);
         }
         console.log("Added from handleInput(): " + GameState.tryWord.join(""));
         if (GameState.column < 5) {
             targetInput = document.getElementById(`r${GameState.row}c${GameState.column}`);
-            console.log(`r${GameState.row}c${GameState.column + 1}`);
+            console.log(`r${GameState.row}c${GameState.column}`);
             targetInput.focus();
         }
     }
@@ -38,6 +64,13 @@ function AddLetter(clicked_id, input_value) {
     } else {
         console.log("All letters are added");
     }
+}
+
+function AddScreenLetter(letter) {
+    const inputId = `r${GameState.row}c${GameState.column}`;
+    const targetInput = document.getElementById(inputId);
+    targetInput.value += letter;
+    targetInput.style.backgroundColor = "rgb(234, 234, 234)";
 }
 
 function DeleteLetter() {
@@ -61,19 +94,11 @@ function DeleteLetter() {
     }
 }
 
-function AddScreenLetter(letter) {
-    const inputId = `r${GameState.row}c${GameState.column}`;
-    const targetInput = document.getElementById(inputId);
-    targetInput.value += letter;
-    targetInput.style.backgroundColor = "rgb(234, 234, 234)";
-}
-
-function ResetGame()
-{
+function ResetGame() {
     ClearGrid();
     GetWord();
-    GameState.row=0;
-    GameState.column=0;
+    GameState.row = 0;
+    GameState.column = 0;
 }
 
 export { handleInput, AddScreenLetter, DeleteLetter, AddLetter, ResetGame };
