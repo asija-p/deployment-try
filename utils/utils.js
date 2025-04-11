@@ -67,23 +67,25 @@ function FreeColumn(param = 0) {
 function GenerateGrid() {
     let gridContainer = document.querySelector(".grid-container");
     const rows = 6;
-    const cols=5;
+    const cols = 5;
     for (let r = 0; r < rows; r++) {
+        let rowDiv = document.createElement('div');
+        rowDiv.className = "box-row";
         for (let c = 0; c < cols; c++) {
             let InputBox = document.createElement('input');
-            InputBox.className="box";
+            InputBox.className = "box";
             InputBox.type = "text";
-            InputBox.maxLength=1;
-            InputBox.value="";
-            InputBox.autocomplete="off";
-            InputBox.disabled =true;
-            InputBox.id=`r${r}c${c}`;
-            InputBox.setAttribute('oninput',`handleInput(this.id,this.value)`);
-            gridContainer.appendChild(InputBox);
+            InputBox.maxLength = 1;
+            InputBox.value = "";
+            InputBox.autocomplete = "off";
+            InputBox.disabled = true;
+            InputBox.id = `r${r}c${c}`;
+            InputBox.setAttribute('oninput', `handleInput(this.id,this.value)`);
+            rowDiv.appendChild(InputBox);
         }
+        gridContainer.appendChild(rowDiv);
     }
 }
-
 function ClearGrid()
 {
     let gridContainer = document.querySelector(".grid-container");
