@@ -25,7 +25,8 @@ async function ButtonPress() {
         const targetBox = document.getElementById(inputId);
 
         if (GameState.tryWord[i] === GameState.answer[i]) {
-            targetBox.style.backgroundColor = "rgb(114,221,38)";
+            targetBox.classList.add("correct-box");
+            
             answerChars[i] = null;
             tryWordChars[i] = null;
         }
@@ -41,22 +42,26 @@ async function ButtonPress() {
         const targetBox = document.getElementById(inputId);
 
         if (tryWordChars[i] !== null && answerChars.includes(tryWordChars[i])) {
-            targetBox.style.backgroundColor = "rgb(248, 215, 50)";
+            targetBox.classList.add("close-box");
             answerChars[answerChars.indexOf(tryWordChars[i])] = null;
         } else if (tryWordChars[i] !== null) {
-            targetBox.style.backgroundColor = "rgb(244, 62, 62)";
+            targetBox.classList.add("wrong-box");
 
         }
     }
 
+    let ans = document.getElementById("answerText");
+
     if (GameState.tryWord.join("") === GameState.answer) {
         End();
+        ans.classList.add("correct-answer");
         EndHandler("You did it!");
         return; 
     }
     else if (GameState.row==5)
     {
         End();
+        ans.classList.add("wrong-answer");
         EndHandler("You failed!");
         return; 
     }

@@ -9,7 +9,6 @@ document.addEventListener("keydown", function (event) {
         //console.log("Backspace Pressed");
         try {
             let InputBox = document.getElementById(`r${GameState.row}c${GameState.column - 1}`);
-            InputBox.style.backgroundColor = 'white';
             GameState.tryWord.pop();
             console.log(GameState.tryWord);
             InputBox.focus();
@@ -34,7 +33,7 @@ function handleInput(input_id, input_value) {
     if (input_value !== "") {
         if (GameState.tryWord[input_id[3]] === undefined) {
             targetInput = document.getElementById(input_id);
-            targetInput.style.backgroundColor = "rgb(234, 234, 234)";
+            targetInput.classList.add("added-character");
             GameState.tryWord.push(input_value.toUpperCase());
             GameState.column++;
         }
@@ -70,7 +69,7 @@ function AddScreenLetter(letter) {
     const inputId = `r${GameState.row}c${GameState.column}`;
     const targetInput = document.getElementById(inputId);
     targetInput.value += letter;
-    targetInput.style.backgroundColor = "rgb(234, 234, 234)";
+    targetInput.classList.add("added-character");
 }
 
 function DeleteLetter() {
@@ -83,7 +82,7 @@ function DeleteLetter() {
         const inputId = `r${GameState.row}c${GameState.column - 1}`;
         const targetInput = document.querySelector(`#${inputId}`);
 
-        targetInput.style.backgroundColor = "rgb(255, 255, 255)";
+        targetInput.classList.remove("added-character");
 
         if (targetInput.value !== "") {
             targetInput.value = "" // Correct way to remove the <p> element
@@ -101,4 +100,14 @@ function ResetGame() {
     GameState.column = 0;
 }
 
-export { handleInput, AddScreenLetter, DeleteLetter, AddLetter, ResetGame };
+function SwitchMode() {
+    const slider = document.querySelector('.slider');
+    const body = document.body;
+    
+   
+      body.classList.toggle('night');
+      
+      slider.classList.toggle('active');
+}
+
+export { handleInput, AddScreenLetter, DeleteLetter, AddLetter, ResetGame, SwitchMode };

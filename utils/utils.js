@@ -3,7 +3,6 @@ import { GameState } from "../data/gameState.js";
 
 
 function ErrorHandler(errorInfo) {
-
     const popupContainer = document.getElementById('errorPopupContainer');
     const popup = document.getElementById("popup");
     let errorMsg = document.querySelector("#errorText");
@@ -14,9 +13,16 @@ function ErrorHandler(errorInfo) {
 
     clearTimeout(GameState.popupTimeout);
 
-    GameState.popupTimeout = setInterval(() => {
+    GameState.popupTimeout = setTimeout(() => {
         popupContainer.classList.remove("show");
     }, 1000);
+
+    const hidePopup = () => {
+        popupContainer.classList.remove("show");
+        document.removeEventListener("click", hidePopup); 
+    };
+
+    document.addEventListener("click", hidePopup);
 }
 
 function EndHandler(endInfo) {
@@ -28,11 +34,15 @@ function EndHandler(endInfo) {
     let desc = document.getElementById("descText");
     let ans = document.getElementById("answerText");
     let resetButton = document.getElementById("playAgain");
-
+    
     popupContainer.classList.add("show");
     endMsg.textContent = endInfo;
     ans.textContent = `${GameState.answer}`;
-    desc.textContent = `Meaning: ${GameState.desc}`
+    desc.textContent = `Meaning: ${GameState.desc}`;
+
+    const computedColor = window.getComputedStyle(ans).color;
+    resetButton.style.backgroundColor = computedColor;
+
     console.log("end");
 
     closeButton.addEventListener("click", () => {
@@ -100,7 +110,7 @@ function ClearGrid()
                 const cellColor = cell.style.backgroundColor;
                 const cellValue = cell.value;
 
-                if (cellColor === "rgb(244, 62, 62)" && cellValue) {
+                if (cell && cell.classList.contains("wrong-box") && cell.value) {
                     const keyBtn = document.getElementById(cellValue.toUpperCase());
 
                     if (keyBtn) 
@@ -111,10 +121,27 @@ function ClearGrid()
                 }
 
                 cell.value = "";
-                cell.style.backgroundColor = "rgb(255, 255, 255)"; 
+                cell.classList.remove("wrong-box", "correct-box", "close-box", "added-character");
             }
         }
     }
 }
 
-export { ErrorHandler, EndHandler, FreeColumn, GenerateGrid, ClearGrid };
+function ShowHint() {
+
+    const popupContainer = document.getElementById('hintPopupContainer');
+    const popup = document.getElementById("popup");
+    const closeButton = document.getElementById("closeHintPopup");
+    let desc = document.getElementById("descHint");
+
+    popupContainer.classList.add("show");
+    desc.textContent = `Meaning: ${GameState.desc}`
+    console.log("hint shown");
+
+    closeButton.addEventListener("click", () => {
+        popupContainer.classList.remove("show");
+    });
+
+}
+
+export { ErrorHandler, EndHandler, FreeColumn, GenerateGrid, ClearGrid, ShowHint };
