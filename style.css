@@ -173,7 +173,7 @@ input{
 }
 .popup {
     position: relative;
-    width: 200px;
+    width: 350px;
     padding: 20px;
     border-radius: 10px;
     background-color: var(--popup-background-color);
@@ -213,21 +213,21 @@ input{
     }
     .description {
         margin-top: 10px; 
-        font-size: 15px;
+        font-size: 20px;
         font-weight: normal;
         font-weight: 600;
     }
 
     .answer {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .error-type {
-        font-size: 15px;
+        font-size: 30px;
     }
 
     .end-type {
-        font-size: 15px;
+        font-size: 30px;
     }
 
     .restart {
@@ -307,7 +307,7 @@ input{
   .switch-mode {
       position: fixed;
       left: 2%;
-      top: 2%;
+      top: 3%;
       width: 50px;
       height: 20px;
       
@@ -323,14 +323,14 @@ input{
   
   .slider-day-sign {
     font-size: 10px;
-    top: 0.5px;
-    left: 30px;
+    top: 0px;
+    left: 31px;
     position: absolute;
   }
 
   .slider-night-sign {
     font-size: 10px;
-    top: .5px;
+    top: 0px;
     left: 0px;
     position: absolute;
   }
@@ -343,7 +343,7 @@ input{
       border-radius: 50%;
       position: absolute;
       top: 1px;
-      left: 2px;
+      left: 1px;
       cursor: pointer;
       
       border: 1.5px solid rgb(133, 133, 133);
@@ -355,7 +355,7 @@ input{
   }
 
   .slider.active {
-    left: 30px;
+    left: 31px;
     transition: left 0.3s ease;
 }
 
@@ -488,5 +488,42 @@ body.night {
       left: 1px;
       position: absolute;
     }
+
+    .line {
+
+        font-size: 15px;
+
+    }
+    .description {
+
+        font-size: 15px;
+
+    }
+
+    .answer {
+        font-size: 20px;
+    }
+
+    .error-type {
+        font-size: 15px;
+    }
+
+    .end-type {
+        font-size: 15px;
+    }
+
+    .restart {
+       
+        font-size: 15px;
+       
+    }
+
+    .popup {
+        
+        width: 200px;
+        
+      }
+      
+    
   
 }
