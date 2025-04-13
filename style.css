@@ -175,12 +175,12 @@ input{
 }
 .popup {
     position: relative;
-    width: 370px;
+    width: 200px;
     padding: 20px;
     border-radius: 10px;
     background-color: var(--popup-background-color);
     font-weight: 600;
-    font-size: 3rem;
+    
     box-shadow: 5px 5px 3px var(--popup-box-shadow);
     text-align: center;
     color: var(--box-color);
@@ -215,13 +215,21 @@ input{
     }
     .description {
         margin-top: 10px; 
-        font-size: 20px;
+        font-size: 15px;
         font-weight: normal;
         font-weight: 600;
     }
 
     .answer {
-        font-size: 25px;
+        font-size: 20px;
+    }
+
+    .error-type {
+        font-size: 15px;
+    }
+
+    .end-type {
+        font-size: 15px;
     }
 
     .restart {
