@@ -451,4 +451,36 @@ body.night {
     .grid-container {
         margin-bottom: 0px;
     }
+
+    .switch-mode {
+        position: fixed;
+        left: 0.5%;
+        top: 2%;
+        width: 50px;
+        height: 20px;
+        
+    }
+    
+    .slider-background {
+        background-color: var(--slider-background);
+        width: 45px;
+        height: 15px;
+        border-radius: 10px;
+        
+    }
+    
+    .slider-day-sign {
+      font-size: 10px;
+      top: 1px;
+      left: 31px;
+      position: absolute;
+    }
+  
+    .slider-night-sign {
+      font-size: 10px;
+      top: 1px;
+      left: 1px;
+      position: absolute;
+    }
+  
 }
