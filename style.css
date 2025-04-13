@@ -5,6 +5,7 @@
 
 body
 {
+    overflow-y: hidden;
     font-family: Roboto;
     font-size: 30px;
     background-color: var(--body-background-color);
@@ -308,34 +309,34 @@ input{
   
   .slider-background {
       background-color: var(--slider-background);
-      width: 50px;
-      height: 20px;
+      width: 45px;
+      height: 15px;
       border-radius: 10px;
       
   }
   
   .slider-day-sign {
-    font-size: 14px;
-    top: 0px;
+    font-size: 10px;
+    top: 0.5px;
     left: 30px;
     position: absolute;
   }
 
   .slider-night-sign {
-    font-size: 14px;
-    top: 0px;
+    font-size: 10px;
+    top: .5px;
     left: 0px;
     position: absolute;
   }
 
 
   .slider {
-      width: 16px;
-      height: 16px;
+      width: 13px;
+      height: 13px;
       background-color: rgb(237, 237, 237);
       border-radius: 50%;
       position: absolute;
-      top: 2px;
+      top: 1px;
       left: 2px;
       cursor: pointer;
       
@@ -348,7 +349,7 @@ input{
   }
 
   .slider.active {
-    left: 32px;
+    left: 30px;
     transition: left 0.3s ease;
 }
 
