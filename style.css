@@ -24,6 +24,8 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
 
 }
 
@@ -71,6 +73,9 @@ input{
 .keyboard-row {
     text-align: center;
     width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0;
 }
 
 .key {
@@ -78,7 +83,8 @@ input{
     display: inline-block;
     border: 1.5px solid var(--key-border-color);
     padding: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+    margin-top: 0px;
     background-color: var(--key-background-color); 
     color: var(--key-color);
 
@@ -102,7 +108,7 @@ input{
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 
     max-width: 350px;
     max-height: 500px;
@@ -256,12 +262,17 @@ input{
         border-radius: 22px;
     }
 
+    .hint-container {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
 
   .hint {
     
     border-radius: 30px;
-    width: 40px;
-    height: 41px;
+    width: 35px;
+    height: 36px;
     background-color: var(--key-background-color);
 
     border: 1.5px solid var(--key-border-color);
@@ -272,7 +283,8 @@ input{
 
     cursor: pointer;
 
-    margin-bottom: 12px;
+    margin-top: 0px;
+    margin-bottom: 8px;
 
   }
 
@@ -417,3 +429,25 @@ body.night {
     
 }
 
+
+@media (max-width: 430px) {
+    .key {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .hint {
+        font-size: 11px;
+        width: 25px;
+        height: 26px;
+        margin-bottom: 0px;
+    }
+    
+    .hint-container {
+        margin-top: 0px;
+    }    
+
+    .grid-container {
+        margin-bottom: 0px;
+    }
+}
